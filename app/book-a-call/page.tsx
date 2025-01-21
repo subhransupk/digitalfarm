@@ -205,7 +205,7 @@ export default function BookACall() {
                   </DropdownTrigger>
                   <DropdownMenu 
                     aria-label="Time slot selection"
-                    onAction={(key: string) => setSelectedTimeSlot(key)}
+                    onAction={(key: Key) => setSelectedTimeSlot(String(key))}
                     selectedKeys={selectedTimeSlot ? new Set([selectedTimeSlot]) : new Set()}
                   >
                     {timeSlots.map((slot) => (
