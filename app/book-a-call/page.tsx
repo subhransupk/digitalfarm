@@ -6,7 +6,7 @@ import { Card, CardBody } from "@nextui-org/card";
 import { Input, Textarea } from "@nextui-org/input";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
 import { FaClock, FaCalendarAlt, FaVideo, FaPhoneAlt } from "react-icons/fa";
-import { useState } from "react";
+import { useState, Key } from "react";
 
 interface Service {
   label: string;
@@ -172,7 +172,7 @@ export default function BookACall() {
                 </DropdownTrigger>
                 <DropdownMenu 
                   aria-label="Service selection"
-                  onAction={(key: string) => setSelectedService(key)}
+                  onAction={(key: Key) => setSelectedService(String(key))}
                   selectedKeys={selectedService ? new Set([selectedService]) : new Set()}
                 >
                   {services.map((service) => (
